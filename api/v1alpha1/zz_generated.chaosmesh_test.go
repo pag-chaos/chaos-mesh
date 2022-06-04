@@ -340,6 +340,69 @@ func TestGCPChaosListChaos(t *testing.T) {
 	chaos.ListChaos()
 }
 
+func TestHelloWorldChaosIsDeleted(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	chaos := &HelloWorldChaos{}
+	err := faker.FakeData(chaos)
+
+	g.Expect(err).To(BeNil())
+
+	chaos.IsDeleted()
+}
+
+func TestHelloWorldChaosIsIsPaused(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	chaos := &HelloWorldChaos{}
+	err := faker.FakeData(chaos)
+
+	g.Expect(err).To(BeNil())
+
+	chaos.IsPaused()
+}
+
+func TestHelloWorldChaosGetDuration(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	chaos := &HelloWorldChaos{}
+	err := faker.FakeData(chaos)
+
+	g.Expect(err).To(BeNil())
+
+	chaos.Spec.GetDuration()
+}
+
+func TestHelloWorldChaosGetStatus(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	chaos := &HelloWorldChaos{}
+	err := faker.FakeData(chaos)
+
+	g.Expect(err).To(BeNil())
+
+	chaos.GetStatus()
+}
+
+func TestHelloWorldChaosGetSpecAndMetaString(t *testing.T) {
+	g := NewGomegaWithT(t)
+	chaos := &HelloWorldChaos{}
+	err := faker.FakeData(chaos)
+	g.Expect(err).To(BeNil())
+	chaos.GetSpecAndMetaString()
+}
+
+func TestHelloWorldChaosListChaos(t *testing.T) {
+	g := NewGomegaWithT(t)
+
+	chaos := &HelloWorldChaosList{}
+	err := faker.FakeData(chaos)
+
+	g.Expect(err).To(BeNil())
+
+	chaos.ListChaos()
+}
+
 func TestHTTPChaosIsDeleted(t *testing.T) {
 	g := NewGomegaWithT(t)
 

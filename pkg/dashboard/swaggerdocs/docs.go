@@ -3219,6 +3219,11 @@ var doc = `{
                     "type": "object",
                     "$ref": "#/definitions/v1alpha1.GCPChaosSpec"
                 },
+                "helloworldChaos": {
+                    "description": "+optional",
+                    "type": "object",
+                    "$ref": "#/definitions/v1alpha1.HelloWorldChaosSpec"
+                },
                 "historyLimit": {
                     "description": "+optional\n+kubebuilder:validation:Minimum=1",
                     "type": "integer"
@@ -3622,6 +3627,35 @@ var doc = `{
                     "type": "string"
                 },
                 "url": {
+                    "type": "string"
+                }
+            }
+        },
+        "v1alpha1.HelloWorldChaosSpec": {
+            "type": "object",
+            "properties": {
+                "containerNames": {
+                    "description": "ContainerNames indicates list of the name of affected container.\nIf not set, the first container will be injected\n+optional",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "duration": {
+                    "description": "Duration represents the duration of the chaos action\n+optional",
+                    "type": "string"
+                },
+                "mode": {
+                    "description": "Mode defines the mode to run chaos action.\nSupported mode: one / all / fixed / fixed-percent / random-max-percent\n+kubebuilder:validation:Enum=one;all;fixed;fixed-percent;random-max-percent",
+                    "type": "string"
+                },
+                "selector": {
+                    "description": "Selector is used to select pods that are used to inject chaos action.",
+                    "type": "object",
+                    "$ref": "#/definitions/v1alpha1.PodSelectorSpec"
+                },
+                "value": {
+                    "description": "Value is required when the mode is set to ` + "`" + `FixedMode` + "`" + ` / ` + "`" + `FixedPercentMode` + "`" + ` / ` + "`" + `RandomMaxPercentMode` + "`" + `.\nIf ` + "`" + `FixedMode` + "`" + `, provide an integer of pods to do chaos action.\nIf ` + "`" + `FixedPercentMode` + "`" + `, provide a number from 0-100 to specify the percent of pods the server can do chaos action.\nIF ` + "`" + `RandomMaxPercentMode` + "`" + `,  provide a number from 0-100 to specify the max percent of pods to do chaos action\n+optional",
                     "type": "string"
                 }
             }
@@ -4735,6 +4769,11 @@ var doc = `{
                     "type": "object",
                     "$ref": "#/definitions/v1alpha1.GCPChaosSpec"
                 },
+                "helloworldChaos": {
+                    "description": "+optional",
+                    "type": "object",
+                    "$ref": "#/definitions/v1alpha1.HelloWorldChaosSpec"
+                },
                 "historyLimit": {
                     "description": "+optional\n+kubebuilder:validation:Minimum=1",
                     "type": "integer"
@@ -5044,6 +5083,11 @@ var doc = `{
                     "description": "+optional",
                     "type": "object",
                     "$ref": "#/definitions/v1alpha1.GCPChaosSpec"
+                },
+                "helloworldChaos": {
+                    "description": "+optional",
+                    "type": "object",
+                    "$ref": "#/definitions/v1alpha1.HelloWorldChaosSpec"
                 },
                 "httpChaos": {
                     "description": "+optional",
