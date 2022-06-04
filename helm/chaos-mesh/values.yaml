@@ -69,9 +69,9 @@ controllerManager:
   # image would be constructed by <registry>/<repository>:<tag>
   image:
     # override global registry, empty value means using the global images.registry
-    registry: ""
+    registry: "docker.io"
     # repository part for image of chaos-controller-manager
-    repository: chaos-mesh/chaos-mesh
+    repository: lujiefsi/chaos-mesh
     # override global tag, empty value means using the global images.tag
     tag: ""
   # Image pull policy
@@ -138,9 +138,9 @@ chaosDaemon:
   # image would be constructed by <registry>/<repository>:<tag>
   image:
     # override global registry, empty value means using the global images.registry
-    registry: ""
+    registry: "docker.io"
     # repository part for image of chaos-daemon
-    repository: chaos-mesh/chaos-daemon
+    repository: lujiefsi/chaos-daemon
     # empty tag means using the global images.tag
     tag: ""
   # Image pull policy
@@ -242,9 +242,9 @@ dashboard:
   serviceAccount: chaos-dashboard
   image:
     # override global registry, empty value means using the global images.registry
-    registry: ""
+    registry: "docker.io"
     # repository part for image of chaos-dashboard
-    repository: chaos-mesh/chaos-dashboard
+    repository: lujiefsi/chaos-dashboard
     # override global tag, empty value means using the global images.tag
     tag: ""
   # Image pull policy

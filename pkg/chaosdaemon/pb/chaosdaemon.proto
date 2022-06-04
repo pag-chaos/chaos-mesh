@@ -29,6 +29,8 @@ service ChaosDaemon {
   rpc InstallJVMRules(InstallJVMRulesRequest) returns (google.protobuf.Empty) {}
 
   rpc UninstallJVMRules(UninstallJVMRulesRequest) returns (google.protobuf.Empty) {}
+
+  rpc ExecHelloWorldChaos(ExecHelloWorldRequest) returns (google.protobuf.Empty) {}
 }
 
 message TcHandle {
@@ -281,4 +283,8 @@ message UninstallJVMRulesRequest {
   string rule = 2;
   int32 port = 3;
   bool enterNS = 4;
+}
+
+message ExecHelloWorldRequest {
+    string container_id = 1;
 }

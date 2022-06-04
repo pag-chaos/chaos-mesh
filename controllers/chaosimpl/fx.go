@@ -33,6 +33,7 @@ import (
 	"github.com/chaos-mesh/chaos-mesh/controllers/chaosimpl/stresschaos"
 	"github.com/chaos-mesh/chaos-mesh/controllers/chaosimpl/timechaos"
 	"github.com/chaos-mesh/chaos-mesh/controllers/chaosimpl/utils"
+	"github.com/chaos-mesh/chaos-mesh/controllers/chaosimpl/helloworldchaos"
 )
 
 var AllImpl = fx.Options(
@@ -50,5 +51,5 @@ var AllImpl = fx.Options(
 	timechaos.Module,
 	physicalmachinechaos.Module,
 	blockchaos.Module,
-
+        helloworldchaos.Module,
 	utils.Module)
